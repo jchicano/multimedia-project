@@ -1,3 +1,6 @@
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { NativeStorage } from "@ionic-native/native-storage/ngx";
+import { AuthGuardService } from './services/auth-guard.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -16,7 +19,10 @@ import { AppComponent } from './app.component';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    AuthGuardService,
+    NativeStorage,
+    GooglePlus
   ],
   bootstrap: [AppComponent]
 })

@@ -99,5 +99,9 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
-    <allow-navigation href="http://localhost:8100" sessionid="baa48472" />
+    <plugin name="cordova-plugin-googleplugin" spec="^8.2.1">
+        <variable name="WEB_APPLICATION_CLIENT_ID" value="867892296838-p6c7gpvkj9s3gq1c78rm6svm8sondphm.apps.googleusercontent.com" />
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.867892296838-p6c7gpvkj9s3gq1c78rm6svm8sondphm" />
+    </plugin>
+    <allow-navigation href="http://localhost:8100" sessionid="b760e7c8" />
 </widget>
