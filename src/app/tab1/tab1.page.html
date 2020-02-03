@@ -8,5 +8,17 @@
 
 <ion-content>
   <ion-button (click)="logout()">Cerrar sesion</ion-button>
-  <ion-img width="20%" [src]="auth.user.imageUrl"></ion-img>
+  <ion-img width="5%" [src]="auth.user.imageUrl"></ion-img>
+  <form [formGroup]="todoForm" (ngSubmit)="addNote()">
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-button shape="round" color="primary" fill="solid" type="submit" [disabled]="!todoForm.valid">Agregar
+    </ion-button>
+  </form>
 </ion-content>
