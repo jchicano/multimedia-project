@@ -1,4 +1,8 @@
+import { note } from './../model/Note';
+import { environment } from './../../environments/environment.prod';
 import { Injectable } from '@angular/core';
+import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
+import { Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

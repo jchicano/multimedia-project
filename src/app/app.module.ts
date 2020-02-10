@@ -1,3 +1,6 @@
+import { AngularFirestoreModule } from "angularfire2/firestore";
+import { AngularFireModule } from "angularfire2";
+import { environment } from './../environments/environment.prod';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { NativeStorage } from "@ionic-native/native-storage/ngx";
 import { AuthGuardService } from './services/auth-guard.service';
@@ -19,6 +22,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [
     StatusBar,

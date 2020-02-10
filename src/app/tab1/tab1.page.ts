@@ -1,8 +1,10 @@
+import { NoteService } from './../services/note.service';
 import { LoadingService } from './../services/ui/loading.service';
 import { note } from './../model/Note';
 import { AuthService } from './../services/auth.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-tab1',
@@ -16,7 +18,9 @@ export class Tab1Page {
   constructor(
     public auth: AuthService,
     private fb: FormBuilder,
-    private loadingS: LoadingService
+    private loadingS: LoadingService,
+    private toastS: ToastService,
+    private noteS: NoteService
   ) {}
 
   ngOnInit() {
@@ -39,7 +43,7 @@ export class Tab1Page {
 
     this.loadingS.show('Guardando...');
 
-    this.todoS.addTODO(data)
+    this.noteS.addNote(data)
       .then((ok) => {
         this.toastS.showOnceToast('Nota guardada');
         this.todoForm.reset();
