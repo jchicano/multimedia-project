@@ -1,3 +1,5 @@
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AngularFireModule } from "angularfire2";
 import { environment } from './../environments/environment.prod';
@@ -29,9 +31,11 @@ import { AppComponent } from './app.component';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthGuardService,
-    NativeStorage,
-    GooglePlus
+    AuthGuardService, // Servicio de autenticacion
+    NativeStorage, // Servicio de almacenamiento: nativo
+    GooglePlus, // Servicio de login de Google
+    QRScanner, // Servicio de scanner de QR: nativo
+    NativeAudio, // Servicio de sonido: nativo
   ],
   bootstrap: [AppComponent]
 })
