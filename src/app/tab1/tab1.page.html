@@ -18,6 +18,13 @@
       <ion-label>Description</ion-label>
       <ion-textarea formControlName="description"></ion-textarea>
     </ion-item>
+    <ion-item>
+      <ion-label>Picture</ion-label>
+      <img *ngIf="capturedSnapURL" width="20%" [src]="capturedSnapURL" />
+      <ion-button (click)="takeSnap()">
+        Take Snap
+      </ion-button>
+    </ion-item>
     <ion-button shape="round" color="primary" fill="solid" type="submit" [disabled]="!todoForm.valid">Agregar
     </ion-button>
   </form>

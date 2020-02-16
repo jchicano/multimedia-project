@@ -1,3 +1,4 @@
+import { Camera } from '@ionic-native/camera/ngx';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { AngularFirestoreModule } from "angularfire2/firestore";
@@ -36,6 +37,7 @@ import { AppComponent } from './app.component';
     GooglePlus, // Servicio de login de Google
     QRScanner, // Servicio de scanner de QR: nativo
     NativeAudio, // Servicio de sonido: nativo
+    Camera, // Servicio de camara: nativo
   ],
   bootstrap: [AppComponent]
 })
