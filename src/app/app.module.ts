@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Camera } from '@ionic-native/camera/ngx';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
@@ -27,6 +28,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     StatusBar,

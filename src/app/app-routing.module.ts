@@ -15,6 +15,10 @@ const routes: Routes = [
   { // Cuando pongan '/*algo que no existe*'
     path: '**',
     redirectTo: ''
+  },
+  {
+    path: 'edit-note-modal',
+    loadChildren: () => import('./modal/edit-note-modal/edit-note-modal.module').then( m => m.EditNoteModalPageModule)
   }
 ];
 @NgModule({

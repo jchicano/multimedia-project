@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="cancelar()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Editar nota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="myForm" (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Picture</ion-label>
+      <img *ngIf="capturedSnapURL" width="20%" [src]="capturedSnapURL" />
+      <ion-button (click)="takeSnap()">
+        Take Snap
+      </ion-button>
+    </ion-item>
+    <ion-button shape="round" color="primary" fill="solid" type="submit" [disabled]="!myForm.valid">Guardar
+    </ion-button>
+  </form>
+</ion-content>
