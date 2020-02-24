@@ -128,7 +128,7 @@ export class Tab2Page {
     });
     modal.onWillDismiss().then(dataReturned => {
       // trigger when about to close the modal
-      if (dataReturned) {
+      if (dataReturned.data) {
       console.log('Received from modal:');
       console.log(dataReturned);
         let dataEdit: note;

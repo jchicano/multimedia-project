@@ -21,7 +21,7 @@ export class EditNoteModalPage implements OnInit {
     quality: 20,
     destinationType: this.camera.DestinationType.DATA_URL,
     encodingType: this.camera.EncodingType.JPEG,
-    mediaType: this.camera.MediaType.ALLMEDIA
+    mediaType: this.camera.MediaType.PICTURE
   };
 
   constructor(
