@@ -1,3 +1,4 @@
+import { SidemenuComponent } from './../sidemenu/sidemenu.component';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,6 +15,9 @@ import { TabsPage } from './tabs.page';
     FormsModule,
     TabsPageRoutingModule
   ],
-  declarations: [TabsPage]
+  providers: [
+    SidemenuComponent
+  ],
+  declarations: [TabsPage, SidemenuComponent]
 })
 export class TabsPageModule {}

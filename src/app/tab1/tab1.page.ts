@@ -1,3 +1,5 @@
+import { StreamingMedia, StreamingVideoOptions, StreamingAudioOptions } from '@ionic-native/streaming-media/ngx';
+import { Platform } from '@ionic/angular';
 import { NoteService } from './../services/note.service';
 import { LoadingService } from './../services/ui/loading.service';
 import { note } from './../model/Note';
@@ -20,6 +22,13 @@ export class Tab1Page {
     encodingType: this.camera.EncodingType.JPEG,
     mediaType: this.camera.MediaType.PICTURE
   };
+  videoOptions: StreamingVideoOptions = {
+    successCallback: () => { console.log('Video played') },
+    errorCallback: (e) => { console.log('Error streaming') },
+    orientation: 'landscape',
+    shouldAutoClose: true,
+    controls: false
+  };
   public capturedSnapURL: string;
   public todoForm: FormGroup;
 
@@ -29,7 +38,9 @@ export class Tab1Page {
     private loadingS: LoadingService,
     private toastS: ToastService,
     private noteS: NoteService,
-    private camera: Camera
+    private camera: Camera,
+    private platform: Platform,
+    private streamingMedia: StreamingMedia
   ) {}
 
   ngOnInit() {
@@ -125,8 +136,29 @@ export class Tab1Page {
       };
     });
   }
-  getImageFromBase64(base64: string) {
-    return 'data:image/jpeg;base64,' + base64;
+
+  startVideo() {
+    let options: StreamingVideoOptions = {
+      successCallback: () => { console.log('Video played') },
+      errorCallback: (e) => { console.log('Error streaming') },
+      orientation: 'landscape',
+      shouldAutoClose: true,
+      controls: false
+    };
+    this.streamingMedia.playVideo('http://techslides.com/demos/sample-videos/small.mp4', options);
+  }
+
+  startAudio() {
+    let options: StreamingAudioOptions = {
+      successCallback: () => { console.log('Video played') },
+      errorCallback: (e) => { console.log('Error streaming') },
+      initFullscreen: false,
+    };
+    this.streamingMedia.playAudio('https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_5MG.mp3', options);
+  }
+
+  stopAudio() {
+    this.streamingMedia.stopAudio();
   }
 
 }

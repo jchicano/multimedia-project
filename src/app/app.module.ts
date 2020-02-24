@@ -1,3 +1,6 @@
+import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
+import { SidemenuComponent } from './sidemenu/sidemenu.component';
+import { toastAnimation } from './toastAnimation';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Camera } from '@ionic-native/camera/ngx';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
@@ -24,7 +27,9 @@ import { AppComponent } from './app.component';
   entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot(
+      {toastEnter: toastAnimation}
+    ),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
@@ -40,7 +45,9 @@ import { AppComponent } from './app.component';
     GooglePlus, // Servicio de login de Google
     QRScanner, // Servicio de scanner de QR: nativo
     NativeAudio, // Servicio de sonido: nativo
-    Camera, // Servicio de camara: nativo
+    Camera, // Servicio de camara: nativo,
+    SidemenuComponent, // Componente menu lateral
+    StreamingMedia, // Servicio de video en streaming
   ],
   bootstrap: [AppComponent]
 })

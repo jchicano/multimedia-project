@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
     const r: boolean = await this.auth.loginGoogle();
     // this.ui.hideLoading();
     if(r) {
-      this.router.navigate(['tabs']);
+      this.router.navigate(['/tabs']);
     }
   }
 

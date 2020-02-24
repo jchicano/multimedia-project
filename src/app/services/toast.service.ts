@@ -27,7 +27,7 @@ export class ToastService {
       color: color,
       duration: dur,
       animated: true,
-      position: "bottom"
+      position: "top"
     }).then((obj) => {
       obj.present();
     });

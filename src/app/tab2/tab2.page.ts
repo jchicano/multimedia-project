@@ -88,7 +88,7 @@ export class Tab2Page {
       dataEdit = {
         title: salida.data.title,
         description: salida.data.description,
-        image: "hacerlo"
+        image: salida.data.image
       }
       this.loadingS.show("Cargando");
       this.noteS.updateNote(salida.data.id, dataEdit).then((ok) => {
