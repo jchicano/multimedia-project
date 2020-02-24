@@ -18,6 +18,6 @@ import { TabsPage } from './tabs.page';
   providers: [
     SidemenuComponent
   ],
-  declarations: [TabsPage, SidemenuComponent]
+  declarations: [TabsPage]
 })
 export class TabsPageModule {}

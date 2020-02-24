@@ -25,7 +25,7 @@ import { AppComponent } from './app.component';
 import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SidemenuComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

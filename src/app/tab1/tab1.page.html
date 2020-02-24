@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button color="primary" menu="menuPrincipal"></ion-menu-button>
+      <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
     <ion-title>
       Tab One
@@ -13,7 +13,7 @@
   <!-- <iframe width="{{ platform.width() }}" height="{{ platform.width()/2c }}" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
   <ion-button (click)="startVideo()">Start video</ion-button>
   <ion-button (click)="startAudio()">Start audio</ion-button>
-  <ion-button (click)="stopAudio()" color="danger">Stop audio</ion-button>
+  <ion-button (click)="stopAudio()" color="danger">Stop audio (iOS)</ion-button>
   <form [formGroup]="todoForm" (ngSubmit)="addNote()">
     <ion-item>
       <ion-label>Title</ion-label>
