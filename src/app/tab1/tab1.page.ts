@@ -141,11 +141,10 @@ export class Tab1Page {
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Video played') },
       errorCallback: (e) => { console.log('Error streaming') },
-      orientation: 'landscape',
       shouldAutoClose: true,
-      controls: false
     };
-    this.streamingMedia.playVideo('http://techslides.com/demos/sample-videos/small.mp4', options);
+    // this.streamingMedia.playVideo('http://techslides.com/demos/sample-videos/small.mp4', options);
+    this.streamingMedia.playVideo('https://webmlovers.xyz/files/1760.314001bb.webm', options);
   }
 
   startAudio() {
