@@ -2,9 +2,9 @@ import { EditNoteModalPage } from './../modal/edit-note-modal/edit-note-modal.pa
 import { note } from './../model/Note';
 import { LoadingService } from './../services/ui/loading.service';
 import { NoteService } from './../services/note.service';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController, ModalController } from '@ionic/angular';
+import { AlertController, ModalController, IonInfiniteScroll } from '@ionic/angular';
 import { ToastService } from '../services/toast.service';
 
 @Component({
@@ -14,6 +14,7 @@ import { ToastService } from '../services/toast.service';
 })
 export class Tab2Page {
 
+  @ViewChild(IonInfiniteScroll, {static: false}) infiniteScroll: IonInfiniteScroll;
   public listadoPanel: any[];
   public textoBuscar: string;
 
@@ -268,5 +269,22 @@ export class Tab2Page {
 
   buscar($event): void {
     this.textoBuscar = $event.detail.value;
+  }
+
+  loadData(event) {
+    setTimeout(() => {
+      console.log('Done');
+      event.target.complete();
+
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
+      if (this.listadoPanel.length == this.listadoPanel.length) {
+        event.target.disabled = true;
+      }
+    }, 500);
+  }
+
+  toggleInfiniteScroll() {
+    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
 }
