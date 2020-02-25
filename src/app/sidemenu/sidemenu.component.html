@@ -4,9 +4,9 @@
             <ion-title>Proyecto Multimedia</ion-title>
         </ion-toolbar>
     </ion-header>
-    <ion-content>
+    <ion-content *ngIf="this.auth.user">
 
-        <ion-item *ngIf="this.auth.user">
+        <ion-item>
             <ion-label>
 
                 <ion-grid>
